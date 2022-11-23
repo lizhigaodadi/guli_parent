@@ -1,0 +1,34 @@
+server:
+  port: 8001
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: service-edu
+  datasource:
+    password: 123.com
+    username: root
+    url: jdbc:mysql://localhost:3306/guli?characterEncoding=utf-8&serverTimezone=UTC&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#如果没有这个配置的话，就会导致从数据库中拿到的数据格式非常奇怪
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+#设置mybatis的日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/lzg/guli/edu/mapper/xml/*.xml
+logging:
+  level:
+    root: info
+
+#如果需要使用logback就要将其他的日志配置信息注释掉
+
+#配置xml位置信息
+

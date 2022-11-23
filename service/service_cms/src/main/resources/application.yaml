@@ -1,0 +1,43 @@
+server:
+  port: 8005
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848    #设置nacos的地址
+  application:
+    name: service-cms
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123.com
+    username: root
+    url: jdbc:mysql://localhost:3306/guli?characterEncoding=utf-8&serverTimezone=UTC&rewriteBatchedStatements=true
+  #设置返回时间的格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  #配置redis
+  redis:
+    host: 192.168.0.11
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1 #最大堵塞等待时间，负数表示没有限制
+        max-idle: 5
+        min-idle: 0
+
+#设置mp xml文件的位置
+
+mybatis-plus:
+  mapper-locations: classpath:com/lzg/guli/cms/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #设置日志
+
+#logging:
+#  level: info   #设置spring打印的日志级别
+

@@ -1,0 +1,13 @@
+server:
+  port: 11111
+spring:
+  application:
+    name: canal-client
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123.com
+    username: root
+    url: jdbc:mysql://localhost:3306/guli?characterEncoding=utf-8&serverTimezone=UTC&rewriteBatchedStatements=true
+

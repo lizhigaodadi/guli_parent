@@ -1,0 +1,22 @@
+server:
+  port: 8002
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: service-oss
+  servlet:
+    multipart:
+      max-file-size: 20MB
+
+
+aliyun:
+  oss:
+    file:
+      endPoint: oss-cn-hangzhou.aliyuncs.com   #地域节点
+      keyId: LTAI5tJi9fDmVz5EubtVkpNC    # keyId
+      keySecret: DSnfcM3VYT8xTwqD1fcUYqE4RPhx0k
+      bucketName: wangxm   #通过java代码创建的bucket
